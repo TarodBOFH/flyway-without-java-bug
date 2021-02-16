@@ -1,3 +1,12 @@
+buildscript {
+    repositories {
+        mavenLocal()
+    }
+    dependencies {
+        classpath("org.flywaydb:flyway-gradle-plugin:0-SNAPSHOT")
+    }
+}
+
 @Suppress("PropertyName")
 val `mysql-version`: String = "8.0.23"
 
@@ -5,9 +14,7 @@ repositories {
     mavenCentral()
 }
 
-plugins {
-    id("org.flywaydb.flyway") version "7.5.3"
-}
+apply(plugin = "org.flywaydb.flyway")
 
 val flywayDrivers: Configuration by configurations.creating
 
@@ -16,6 +23,9 @@ dependencies {
 }
 
 val db = System.getProperty("FLYWAY_DB") ?: "localhost"
+
+// From kotlinDSLAccessorsReport (plugin applied from classpath)
+fun Project.flyway(configure: Action<org.flywaydb.gradle.FlywayExtension>) = (this as ExtensionAware).extensions.configure("flyway", configure)
 
 flyway {
     locations = arrayOf("filesystem:${projectDir}/src/main/sql")
@@ -26,9 +36,4 @@ flyway {
     password = ""
 
     configurations = arrayOf("flywayDrivers")
-}
-
-tasks.wrapper {
-    distributionType = Wrapper.DistributionType.ALL
-    gradleVersion = "6.8.2"
 }
