@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Feb 16 02:31:17 CET 2021
+flyway-gradle-plugin-0-SNAPSHOT.jar>=
+flyway-gradle-plugin-0-SNAPSHOT.pom>=
+flyway-gradle-plugin-0-SNAPSHOT-sources.jar>=

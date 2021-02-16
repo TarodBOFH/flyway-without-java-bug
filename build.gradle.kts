@@ -1,6 +1,8 @@
 buildscript {
     repositories {
-        mavenLocal()
+        maven {
+            url = uri("$projectDir/local-maven-repo")
+        }
     }
     dependencies {
         classpath("org.flywaydb:flyway-gradle-plugin:0-SNAPSHOT")

@@ -1,0 +1,8 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Feb 16 00:28:36 CET 2021
+@default-repo.gradle.org-https\://repo.gradle.org/gradle/libs-releases-local/.lastUpdated=1613431716035
+https\://repo1.maven.org/maven2/.error=
+https\://nexus.flywaydb.org/repository/flyway/.error=Could not transfer artifact org.flywaydb\:flyway-core\:pom\:0-SNAPSHOT from/to flyway-repo (https\://nexus.flywaydb.org/repository/flyway/)\: Transfer failed for https\://nexus.flywaydb.org/repository/flyway/org/flywaydb/flyway-core/0-SNAPSHOT/flyway-core-0-SNAPSHOT.pom 400 Repository version policy\: RELEASE does not allow version\: 0-SNAPSHOT
+https\://repo.gradle.org/gradle/libs-releases-local/.error=Could not transfer artifact org.flywaydb\:flyway-core\:pom\:0-SNAPSHOT from/to repo.gradle.org (https\://repo.gradle.org/gradle/libs-releases-local/)\: Transfer failed for https\://repo.gradle.org/gradle/libs-releases-local/org/flywaydb/flyway-core/0-SNAPSHOT/flyway-core-0-SNAPSHOT.pom 409 Conflict
+@default-flyway-repo-https\://nexus.flywaydb.org/repository/flyway/.lastUpdated=1613431716200
+https\://repo1.maven.org/maven2/.lastUpdated=1613431715873

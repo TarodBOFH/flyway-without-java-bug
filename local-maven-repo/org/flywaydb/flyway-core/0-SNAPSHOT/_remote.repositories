@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Feb 16 00:31:48 CET 2021
+flyway-core-0-SNAPSHOT-sources.jar>=
+flyway-core-0-SNAPSHOT.jar>=
+flyway-core-0-SNAPSHOT.pom>=
