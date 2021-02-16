@@ -12,5 +12,8 @@ the builds or by running any tasks and waiting for `Unable to load class 'com.my
 The branch [with-java-plugin](/TarodBOFH/flyway-without-java-bug/tree/with-java-plugin) contains the java plugin and
 when running any task, the expected "connection timeout" error is raised instead of the missing driver.
 
+The branch [fix-applied](/TarodBOFH/flyway-without-java-bug/tree/fix-applied) is aimed to use a locally (`~/.m2/repository/`)
+version of the plugin with the patch applied.
+
 To fix this, we can just move out of the `if(isJavaProject())` condition the configuration artifacts defined
 in the build.
