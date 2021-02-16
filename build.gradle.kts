@@ -1,17 +1,31 @@
-allprojects {
-    buildscript {
-        apply(from = "${rootProject.projectDir}/buildSrc/versions.gradle.kts") // parent properties
-        apply(from = "${rootProject.projectDir}/versions.gradle.kts") // can override "parent" properties
-    }
+@Suppress("PropertyName")
+val `mysql-version`: String = "8.0.23"
+
+repositories {
+    mavenCentral()
 }
 
 plugins {
-    id("common.gradle.scripts.versions")
-    id("common.gradle.scripts.idea")
-    id("common.gradle.scripts.kotlin-jvm")
-    id("common.gradle.scripts.kotlin-test")
-    id("common.gradle.scripts.spring-kotlin")
-    id("common.gradle.scripts.spotless-kotlin")
+    id("org.flywaydb.flyway") version "7.5.3"
+}
+
+val flywayDrivers: Configuration by configurations.creating
+
+dependencies {
+    flywayDrivers("mysql:mysql-connector-java:${`mysql-version`}")
+}
+
+val db = System.getProperty("FLYWAY_DB") ?: "localhost"
+
+flyway {
+    locations = arrayOf("filesystem:${projectDir}/src/main/sql")
+
+    // db-config
+    url = "jdbc:mysql://$db?autoReconnect=true&useSSL=false&useUnicode=yes&characterEncoding=UTF-8"
+    user = "root"
+    password = ""
+
+    configurations = arrayOf("flywayDrivers")
 }
 
 tasks.wrapper {

@@ -1,1 +1,1 @@
-rootProject.name = "gradle-template"
+rootProject.name = "flyway-without-java-bug"
