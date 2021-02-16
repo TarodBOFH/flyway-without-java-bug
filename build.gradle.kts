@@ -7,6 +7,7 @@ repositories {
 
 plugins {
     id("org.flywaydb.flyway") version "7.5.3"
+    java
 }
 
 val flywayDrivers: Configuration by configurations.creating
